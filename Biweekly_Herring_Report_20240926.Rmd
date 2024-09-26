@@ -1,0 +1,222 @@
+---
+title: "Herring Landings Report for 2024 Fishing Season"
+author: "Herring & Fisheries Acoustics Working Group - SABS"
+date: "`r Sys.Date()`"
+output:
+---
+<style type="text/css">
+h1 { /* Header 1 */
+  font-size: 24px;
+}
+.watermark {
+  opacity: 0.2;
+  position: fixed;
+  top: 50%;
+  left: 40%;
+  font-size: 750%;
+  color: #00407d;
+}
+</style>
+
+```{r setup, include = FALSE, echo = FALSE}
+  knitr::opts_chunk$set(collapse = TRUE, echo = FALSE, message = FALSE,warning = FALSE,
+  fig.width = 6, fig.height = 4.5, out.width = "1200px", comment = "#>")
+  dt = "2024-09-26"
+  library(kableExtra)
+  library(ggplot2)
+  library(DT)
+  create_dt <- function(x){
+    DT::datatable(x,
+                extensions = 'Buttons',
+                options = list(dom = 'B',
+                               buttons = c('copy','csv', 'excel',  'print'),
+                                initComplete = JS(
+                                  "function() {",
+                                  "$('table.dataTable').hide();",
+                                  "}")
+                               ))
+  }
+right <- function (string, char){substr(string,nchar(string)-(char-1),nchar(string))}
+left <- function (string,char){substr(string,1,char)}
+findlast <- function(string,char){max(gregexpr(pattern = char,string)[[1]])}
+```
+
+# Landing Report Subtypes {.tabset}
+<font size="2"> All data are subject to changes and are generated from data uploaded to MARFIS and the Herring Sampling database. Note that quality control checks are performed throughout the season. Some coordinates of landings may be inaccurate </font>
+
+## Purse Seine Landings {.tabset}
+```{r, fig.cap = "Figure 1. Overall purse seine catches in quota area."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig1 <- readRDS(paste0(getwd(),"/Fig1.rda"))
+print(Fig1)
+```
+<br>
+<br>
+<br>
+```{r, fig.cap = "Figure 2. Overall purse seine offshore banks non-quota catches."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig2 <- readRDS(paste0(getwd(),"/Fig2.rda"))
+print(Fig2)
+```
+<br>
+<br>
+<br>
+```{r, fig.cap = "Figure 3. Purse seine Landings by month."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig3 <- readRDS(paste0(getwd(),"/Fig3.rda"))
+print(Fig3)
+```
+
+
+## Fishing Grounds {.tabset}
+
+### German Bank {.tabset}
+
+```{r, fig.cap = "Figure 4. Purse seine catches for German Bank Fishery."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig6 <- readRDS(paste0(getwd(),"/Fig6.rda"))
+print(Fig6)
+```
+<br>
+<br>
+<br>
+```{r, fig.cap = "Figure 5. Gillnet catches for german Bank Fishery."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig6a <- readRDS(paste0(getwd(),"/Fig6a.rda"))
+print(Fig6a)
+```
+
+### Scots Bay {.tabset}
+```{r, fig.cap = "Figure 6. Purse seine catches for Scots Bay Fishery."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig7 <- readRDS(paste0(getwd(),"/Fig7.rda"))
+print(Fig7)
+```
+
+### Little Hope {.tabset}
+```{r, fig.cap = "Figure 7. Little Hope Gillnet Catches."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig8 <- readRDS(paste0(getwd(),"/Fig8.rda"))
+print(Fig8)
+```
+
+### Eastern Shore {.tabset}
+```{r, fig.cap = "Figure 8. Eastern Shore Gillnet Catches."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig9 <- readRDS(paste0(getwd(),"/Fig9.rda"))
+print(Fig9)
+```
+
+### New Brunswick Southwest {.tabset}
+```{r, fig.cap = "Figure 9. Weir Catches for calendar Year (reported by industry)."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig10a <- readRDS(paste0(getwd(),"/Fig10a.rda"))
+print(Fig10a)
+```
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- ```{r, fig.cap = "Figure 10. Shutoff/Trap Catches for calendar Year (reported by industry)."} -->
+<!-- setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt)) -->
+<!-- Fig11 <- readRDS(paste0(getwd(),"/Fig11.rda")) -->
+<!-- print(Fig11) -->
+<!-- ```  -->
+
+
+
+## Length Frequency Stats {.tabset}
+### Overall {.tabset}
+```{r, fig.cap = "Figure 11. Overall herring sampling catch coverage by 10 mile squares. Pie charts show samples size proportions for juvenile (green <23cm) and adult herring (red >=23cm)."}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+Fig14 <- readRDS(paste0(getwd(),"/Fig14.rda"))
+print(Fig14)
+```
+
+### Gear {.tabset}
+```{r, echo=FALSE, fig.cap="Figure 12. Herring length frequency samples by gear.", out.width = '100%'}
+ knitr::include_graphics(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt,"/Fig15.png"))
+```
+<br>
+<br>
+<br>
+
+```{r, echo=FALSE, fig.cap="Figure 13. Herring length frequency samples by gear by month.", out.width = '100%'}
+ knitr::include_graphics(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt,"/Fig16.png"))
+```
+
+### Fishing Ground {.tabset}
+```{r, echo=FALSE, fig.cap="Figure 14. Herring length frequency samples by fishing ground.", out.width = '100%'}
+knitr::include_graphics(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt,"/Fig17.png"))
+```
+
+### Fishing Ground by month {.tabset}
+```{r, echo=FALSE, fig.cap="Figure 15. Herring length frequency samples by fishing ground by month.", out.width = '100%'}
+ knitr::include_graphics(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt,"/Fig18.png"))
+```
+
+## Landing Statistics {.tabset}
+### Table 1 {.tabset}
+<font size="3"> Table 1: Herring landings by area, gear, and month</font>
+<br>
+```{r, fig.cap = ""}
+setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+T1 <- read.csv("Table1.csv")
+
+create_dt(T1)
+T1 %>%
+  kbl() %>%
+  kable_styling(font_size=12)
+```
+### Table 2 {.tabset}
+<font size="3"> Table 2: Herring length sampling summary by month, gear and fishing ground with average weight, mean length and length range by grouping. Data for number of samples, number of fish measured, sampled catch weight (t) and estimated catch numbers (thousands) for the sampled catch. Average weight is based on sampled catch and the estimated sampled catch numbers.</font>
+<br>
+```{r, fig.cap = ""}
+  setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+T2 <- read.csv("Table2.csv")
+
+colnames(T2) <- c("Month",
+                  "Gear",
+                   "Fishing Ground",
+                   "No. Samp.",
+                   "No. Meas.",
+                   "Cat. Samp.(t)",
+                    "Cat. No.(1000s)",
+                    "Avg. Wt.(g)",
+                    "Min. Len.",
+                    "Avg. Len.",
+                    "Max. Len.")
+  create_dt(T2)
+  T2 %>%
+    kbl() %>%
+ kable_styling(font_size=12)
+```
+
+### Table 3 {.tabset}
+<font size="3"> Table 3: Herring length sampling summary by month, gear and fishing ground with percent catch numbers by size groups for <15cm (~6 inch), <18cm (~7 inch), <23cm and >=23cm (adult). Data for the number of samples, sampled catch weight (t), estimated catch weight (t) <23cm and estimated catch numbers (thousands) for the sampled catch. Average weight is based on sampled catch and the estimated sampled catch numbers.</font>
+<br>
+```{r, fig.cap = ""}
+ setwd(paste0("C:/Users/DebertinA/Documents/4VWX Herring/Biweekly Report Codes/Biweekly 4VWX Herring reports/ReportRun/",dt))
+ T3 <- read.csv("Table3.csv")
+ 
+ colnames(T3) <- c("Month",
+                   "Gear",
+                   "Fishing Ground",
+                   "No. Samp.",
+                   "No. Meas.",
+                   "Cat. Samp.(t)",
+                   "Catch t <23cm",
+                   "No. <LT 15cm",
+                   "No. <LT 18cm",
+                   "%Adult >=23cm",
+                   "%Adult >=30cm")
+ create_dt(T3)
+ T3 %>%
+   kbl() %>%
+ kable_styling(font_size=12)
+```
+
+
+## About
+
+This report was generated on: `r Sys.time()`<br />
+`r R.version.string`<br />
