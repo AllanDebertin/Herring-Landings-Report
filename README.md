@@ -9,7 +9,7 @@ These representations and landings summaries are not to be considered the author
 
 Please note that not all herring samples that have been caught to date have been processed or uploaded to MARFIS, and this report has not been QC’d for any catch coordinate errors. This document is now formatted as a HTML file. Please open using a web-browser software such as Microsoft Explorer, Microsoft Edge, Google Chrome or Firefox Mozilla. If you having trouble viewing the file, please contact Allan.Debertin@dfo-mpo.gc.ca.  
 
-If you want to download the report: [Click Here](https://github.com/AllanDebertin/Herring-Landings-Report/blob/main/Biweekly_Herring_Report_20250411.html). Then select the download file button loacated on the top right tab. 
+If you want to download the report: [Click Here](https://htmlpreview.github.io/?https://github.com/AllanDebertin/Herring-Landings-Report/blob/main/Biweekly_Herring_Report_20250912.html). Then select the download file button loacated on the top right tab. 
 
 You might receive a warning the HTML is dangerous to download from an unknown source.
 
